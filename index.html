@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MulMed</title>
+</head>
+<body>
+    <div class="header"><h1>SimplyExplained.com</h1></div>
+
+    <div class="content">
+
+        <div class="sec1">
+            <div class="trailer">
+                <video src="assets/trailer.mp4" autoplay loop muted></video>
+                <a href="#main">Learn More</a>
+            </div>
+            <div class="synopsis">
+                <h1>"Apa itu ARP?"</h1>
+                <p>
+                    Address Resolution Protocol merupakan sebuah protokol dalam
+                    jaringan internet yang digunakan untuk mengkonversikan 
+                    IP Address menjadi MAC Address untuk mengetahui alamat hardware.
+                    Di sini, kami akan menjelaskan simulasi protokol ARP dalam bentuk
+                    animasi yang bisa anda klik pada video di samping.
+                </p>
+            </div>
+        </div>
+
+        <div class="sec2">
+            <h1>TERMS</h1>
+            <p>
+                Berikut penjelasan singkat mengenai beberapa terminologi yang terdapat
+                dalam protokol ini.
+            </p>
+            <div class="term">
+                <div class="term-title">
+                    <p class="num">1</p>
+                    <h1>IP Address</h1>
+                </div>
+                <div class="term-desc">
+                    <p>
+                        <b>IP Address</b> adalah sebuah alamat yang digunakan untuk mengidentifikasi
+                        perangkat dalam jaringan internet.
+                    </p>
+                </div>
+            </div>
+            <div class="term">
+                <div class="term-title">
+                    <p class="num">2</p>
+                    <h1>MAC Address</h1>
+                </div>
+                <div class="term-desc">
+                    <p>
+                        <b>MAC Address</b> adalah sebuah alamat fisik unik yang dimiliki
+                        tiap-tiap perangkat pada Network Interface Card.
+                    </p>
+                </div>
+            </div>
+            <div class="term">
+                <div class="term-title">
+                    <p class="num">3</p>
+                    <h1>ARP Cache</h1>
+                </div>
+                <div class="term-desc">
+                    <p>
+                        <b>ARP Cache</b> adalah sekumpulan IP Address beserta beserta MAC Address-nya
+                        yang dipetakan dalam bentuk tabel. Untuk tiap entry dalam cache ini ada dua jenis,
+                        Static Entry dan Dynamic Entry.
+                    </p>
+                </div>
+            </div>
+            <div class="term">
+                <div class="term-title">
+                    <p class="num">4</p>
+                    <h1>Static Entry</h1>
+                </div>
+                <div class="term-desc">
+                    <p>
+                        <b>Static Entry</b> adalah satu baris dalam ARP Cache berisi IP Address dan Mac Address-nya
+                        yang didaftarkan secara manual oleh kita sebagai end-user melalui command line.
+                        Static entry akan tetap berada dalam ARP Cache hingga kita memutuskan untuk menghapusnya.
+                        Hal ini dilakukan untuk mengurangi trafik jaringan karena dengan adanya static entry ini,
+                        kita tak perlu melakukan proses ARP lagi untuk mengetahui MAC Address tujuan. 
+                    </p>
+                </div>
+            </div>
+            <div class="term">
+                <div class="term-title">
+                    <p class="num">5</p>
+                    <h1>Dynamic Entry</h1>
+                </div>
+                <div class="term-desc">
+                    <p>
+                        <b>Dynamic Entry</b> adalah satu baris dalam ARP Cache berisi IP Address dan Mac Address-nya
+                        yang didaftarkan secara otomatis ketika protokol ARP berhasil menresolusi IP Address
+                        menjadi MAC Address. Dynamic entry bersifat tidak permanen dan akan di-flush / dihapus
+                        secara berkala agar tidak memenuhi cache.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sec3">
+            <h1>CAST</h1>
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/brayan.jpg" alt="">
+                    </div>
+                    <div class="card-desc">
+                        <p>Brayan Esten</p>
+                        <p>2440029454</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/ekin.jpeg" alt="">
+                    </div>
+                    <div class="card-desc">
+                        <p>Ekin Tanuwijaya</p>
+                        <p>2440018444</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/rheza.jpeg" alt="">
+                    </div>
+                    <div class="card-desc">
+                        <p>Rheza Mario</p>
+                        <p>2440008765</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="animation" id="main">
+        <div class="video-wrapper">
+            <video id="main-video" controls src="assets/ARP_Multimedia.mp4" autoplay class="video"></video>
+            <a href="#" class="close-btn">X</a>
+        </div>
+    </div>
+
+
+
+    <script>
+        const close = document.querySelector(".close-btn");
+        const video = document.querySelector("#main-video");
+        
+        close.addEventListener("click", function(){
+            video.pause();
+            video.currentTime = 0;
+        });
+    </script>
+    
+</body>
+</html>
